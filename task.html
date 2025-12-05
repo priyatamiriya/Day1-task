@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <script>
-        var username = "priya";         
-        const age = 21;                  
+    <div class="container">
+        <h2>To-Do Application</h2>
 
-        if (true) {
-            let username = "srii";       
-            const city = "Hyderabad";    
+        <div class="input-row">
+            <input type="text" id="taskInput" placeholder="Enter a task..." />
+            <button id="addBtn">Add</button>
+        </div>
 
-            document.writeln(`username: ${username}<br>`);
-            document.writeln(`age: ${age}<br>`);
-            document.writeln(`city: ${city}`);
-        }
-    </script>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
