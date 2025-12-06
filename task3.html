@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Joke API</title>
+</head>
+<style>
+    button{
+        background-color: rgb(86, 86, 243);
+         margin-left: 600px;
+        margin-top: 20px;
+        font-size: larger;
+       
+    }
+</style>
+<body>
+
+    <h1 id="myjoke"></h1>
+
+    <button onclick="getJoke()">Get Joke</button>
+
+    <script>
+
+        async function getJoke() {
+            try {
+
+                const result = await fetch("https://v2.jokeapi.dev/joke/Any");
+                const data = await result.json();
+
+                
+                if (data.type === "single") {
+                    document.getElementById("myjoke").innerHTML =
+                        "Joke : " + data.joke;
+                }
+
+                
+                else {
+                    document.getElementById("myjoke").innerHTML =
+                        "Joke : " + data.setup + " - " + data.delivery;
+                }
+
+            } catch (err) {
+                document.getElementById("myjoke").innerHTML =
+                    "Error fetching joke!";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
